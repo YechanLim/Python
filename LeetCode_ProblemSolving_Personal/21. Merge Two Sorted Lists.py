@@ -8,6 +8,7 @@ class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         solution = ListNode()
         lastNode = solution
+        
 
         while(l1 != None or l2 != None):
             newNode = ListNode()
