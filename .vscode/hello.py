@@ -6,11 +6,13 @@ class ListNode:
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         solution = ListNode()
+        lastNode = solution
         addtionRound = 0
 
         while(l1 != None or l2 != None):
             val1 = 0
             val2 = 0
+            newNode = ListNode()
 
             if(l1 != None):
                 val1 = l1.val
@@ -21,14 +23,20 @@ class Solution:
                 l2 = l2.next
 
             if(val1 + val2 + addtionRound >= 10):
-                solution.val = val1 + val2 + addtionRound - 10
+                newNode.val = val1 + val2 + addtionRound - 10
                 addtionRound = 1
             else:
-                solution.val = val1 + val2 + addtionRound
+                newNode.val = val1 + val2 + addtionRound
                 addtionRound = 0
 
-            solution.next = next
+            lastNode.next = newNode
+            lastNode = newNode
 
+        if(addtionRound == 1):
+            newNode = ListNode(1,None)
+            lastNode.next = newNode
+            
+        solution = solution.next
         return solution
 
 
