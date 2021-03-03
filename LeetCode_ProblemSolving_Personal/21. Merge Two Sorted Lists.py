@@ -15,7 +15,7 @@ class Solution:
             if(l1 == None):
                 newNode.val = l2.val
                 l2 = l2.next    
-            else if(l2 == None):
+            elif(l2 == None):
                 newNode.val = l1.val
                 l1 = l1.next
             else:
