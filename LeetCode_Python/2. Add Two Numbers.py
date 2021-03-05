@@ -22,6 +22,7 @@ class Solution:
                 val2 = l2.val
                 l2 = l2.next
 
+            //이것보단 % / 로 하는게 더 깔끔할 거 같다.!
             if(val1 + val2 + addtionRound >= 10):
                 newNode.val = val1 + val2 + addtionRound - 10
                 addtionRound = 1
